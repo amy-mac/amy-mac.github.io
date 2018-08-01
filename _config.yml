@@ -1,3 +1,4 @@
+---
 title: My Blog
 description: Mostly about tech stuff
 disqus_shortname: amy-mac
@@ -7,23 +8,31 @@ owner:
   name: Amy MacKinnon
   email: amy@amy-mac.com
 
-include: ['images']
-exclude: ['_drafts', 'life', 'Rakefile', 'README.md']
 show_drafts: nil
+include:
+- images
+exclude: ['_drafts', 'Gemfile', 'Gemfile.lock', 'life', 'Rakefile', 'README.md']
 timezone: America/Los_Angeles
 
 permalink: /blog/:year/:month/:title/
 category_dir: "blog/categories"
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - smart
-highlighter: pygments
+# markdown: redcarpet
+markdown: kramdown
+# redcarpet:
+#  extensions:
+#    - smart
+# highlighter: pygments
 
+# show_excerpts: true
 excerpt_separator: "\n\n"
 
 paginate_path: "blog/page:num"
 paginate: 10
+
+plugins:
+ - jekyll-paginate
+ - jekyll-category-pages
+# - jekyll-feed
 
 sass:
   sass_dir: /assets/css/
@@ -37,4 +46,4 @@ sass:
 
 #  compile_in_place: false   # true|false
   # If true, compiles sass directly into your jekyll source directory
-  # As well as your destination directory
+ # # As well as your destination directory
